@@ -11,7 +11,7 @@ public class Cart extends Bill{
     public List<Integer> quant = new ArrayList<Integer>();
     public int noOfItems=0;
     public void updateCart(Item a,int q ){
-      //write your code here
+      noOfItems++;//write your code here
       //------------
       //------------
     	inCart.add(a);
@@ -30,6 +30,9 @@ public class Cart extends Bill{
     }
     public int calcBill() {
     	int total=0;
+    	 for(int i=0;i<noOfItems;i++){
+    		 total+=inCart.get(i).mrp*quant.get(i);
+         }
 //    	write your code here!!!
 //    	----------------------
     	return total;
